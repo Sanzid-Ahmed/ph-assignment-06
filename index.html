@@ -1,16 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- daisyui and tailwind link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    
+    <header>
+        <nav class="bg-[#15803D]">
+            <div class="navbar bg-base-100 bg-[#15803D] w-10/12 mx-auto">
+                <!-- <div class="w-10/12 mx-auto"> -->
+                    <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Item 1</a></li>
+                            <li>
+                                <a>Item 2</a>
+                                <!-- <a>Parent</a>
+                                <ul class="p-2">
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul> -->
+                            </li>
+                            <li><a>Item 3</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl text-white">Green Earth</a>
+                    </div>
+                    <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Item 1</a></li>
+                        <li>
+                            <a>Item 2</a>
+                            <!-- <details>
+                                <summary>Parent</summary>
+                                <ul class="p-2">
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul>
+                            </details> -->
+                        </li>
+                        <li><a>Item 3</a></li>
+                    </ul>
+                    </div>
+                    <div class="navbar-end">
+                    <a class="btn text-[#15803D] bg-[#FACC15] rounded-[50px] border-none">Plant a Tree</a>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </nav>
+        <div class="banner flex justify-between items-center bg-[#CFF0DC]">
+            <img src="assets/hero-leaf1.png" alt="">
+            <div class="text-center">
+                <h1 class="font-bold text-4xl text-[#1F2937]">Plant a Tree, Grow a Future</h1>
+                <p class="mt-4 text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future <br>generations.</p>
+                <a class="btn text-[#15803D] bg-[#FACC15] rounded-[50px] border-none mt-6">Plant a Tree</a>
+            </div>
+            <img src="assets/hero-leaf2.png" alt="">
+        </div>
+    </header>
+
+    <section class="bg-[#F0FDF4] pt-20">
+        <h1 class="text-center font-bold text-3xl text-[#1F2937] mb-10">Choose Your Trees</h1>
+        <div class="catagoris-items-cart w-10/12 mx-auto">
+            <h3 class="font-bold text-md mb-4">Categories</h3>
+            <ol class="space-y-2">
+                <li class="py-2 px-2">All Trees</li>
+                <li class="py-2 px-2">Fruit Trees</li>
+                <li class="py-2 px-2">Flowering Trees</li>
+                <li class="py-2 px-2">Shade Trees</li>
+                <li class="py-2 px-2">Medicinal Trees</li>
+                <li class="py-2 px-2">Timber Trees</li>
+                <li class="py-2 px-2">Evergreen Trees</li>
+                <li class="py-2 px-2">Ornamental Plants</li>
+                <li class="py-2 px-2">Bamboo</li>
+                <li class="py-2 px-2">Climbers</li>
+                <li class="py-2 px-2">Aquatic Plants</li>
+            </ol>
+        </div>
+    </section>
+
 </body>
 </html>
