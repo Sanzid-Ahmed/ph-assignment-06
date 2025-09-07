@@ -62,9 +62,9 @@ const displayTrees = (trees) => {
     treesContainer.innerHTML = "";
 
 
-    const div = document.createElement("div");
-    div.classList.add("grid", "grid-cols-3", "gap-3");
-
+    const div = document.getElementById("div");
+    // div.classList.add("grid", "grid-cols-3", "gap-3", "max-[1100px]:grid-cols-2");
+    
     trees.forEach(tree => {
         const div2 = document.createElement("div");
         div2.innerHTML =
@@ -83,8 +83,6 @@ const displayTrees = (trees) => {
         </div>
         `;
         div.appendChild(div2);
-
-
     });
     treesContainer.appendChild(div);
 

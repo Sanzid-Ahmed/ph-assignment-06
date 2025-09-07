@@ -1,4 +1,3 @@
-// Load all trees initially
 const loadAllTrees = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
         .then(res => res.json())
@@ -11,6 +10,20 @@ const load = (id) => {
         .then(res => res.json())
         .then(data => displayTrees(data.plants))
 };
+// URL Calling parts ==========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const updateTotal = () => {
@@ -20,7 +33,7 @@ const updateTotal = () => {
     let total = 0;
 
     items.forEach(item => {
-        let price = parseInt(item.dataset.price); // read price from data attribute
+        let price = parseInt(item.dataset.price);
         let quantity = parseInt(item.querySelector("span").innerText);
         total += price * quantity;
     });
@@ -33,13 +46,28 @@ const updateTotal = () => {
 
 
 
-// Display trees globally
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const displayTrees = (trees) => {
     const treesContainer = document.getElementById("trees-container");
     treesContainer.innerHTML = "";
 
     const div = document.createElement("div");
-    div.classList.add("grid", "grid-cols-3", "gap-3");
+    div.classList.add("grid", "grid-cols-3", "gap-3", "max-[1100px]:grid-cols-2");
 
     trees.forEach(tree => {
         const div2 = document.createElement("div");
@@ -61,7 +89,28 @@ const displayTrees = (trees) => {
     treesContainer.appendChild(div);
 };
 
-// Cart functions globally
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const cartadd = (name, price) => {
     const cart = document.getElementById("cart");
     let existingItem = cart.querySelector(`[data-name="${name}"]`);
@@ -100,15 +149,38 @@ const cartneg = (name, price) => {
     }
     updateTotal();
 };
+// cart addition and negation part
 
-// Load categories
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const loadCategories = () => {
     fetch("https://openapi.programming-hero.com/api/categories")
         .then(res => res.json())
         .then(data => displayCategories(data.categories))
 };
 
-// Display categories
+
 const displayCategories = (categories) => {
     const categoriesContainer = document.getElementById("categories-container");
     categoriesContainer.innerHTML = "";
@@ -131,6 +203,22 @@ const allBtn = document.getElementById("all-btn");
 allBtn.classList.add("cursor-pointer");
 allBtn.addEventListener("click", loadAllTrees);
 
-// Initialize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 loadCategories();
 loadAllTrees();
