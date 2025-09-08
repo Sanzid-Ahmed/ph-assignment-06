@@ -67,7 +67,7 @@ const displayTrees = (trees) => {
     treesContainer.innerHTML = "";
 
     const div = document.createElement("div");
-    div.classList.add("grid", "grid-cols-3", "gap-3", "max-[1100px]:grid-cols-2");
+    div.classList.add("grid", "grid-cols-3", "gap-3", "max-[1100px]:grid-cols-2", "max-[500px]:grid-cols-1");
 
     trees.forEach(tree => {
         const div2 = document.createElement("div");
@@ -186,7 +186,7 @@ const displayCategories = (categories) => {
     categoriesContainer.innerHTML = "";
 
     const ol = document.createElement("ol");
-    ol.classList.add("space-y-2");
+    ol.classList.add("space-y-2", "max-[500px]:flex", "max-[500px]:flex-wrap", "max-[500px]:justify-between");
 
     for (let category of categories) {
         const li = document.createElement("li");
