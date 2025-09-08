@@ -2,11 +2,9 @@ const loadAllTrees = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
         .then(res => res.json())
         .then(data => {
-            removeActive();
+            removeActive2();
             const allBtn = document.getElementById("all-btn");
-            const active = `bg-[#15803D]`;
-            const active2 = `text-white`
-            allBtn.classList.add(active, active2);
+            allBtn.classList.add("bg-[#15803D]", "text-white", "rounded-sm");
             displayTrees(data.plants)
         })
 };
@@ -18,9 +16,7 @@ const load = (id) => {
         .then(data => {
             removeActive();
             const clickedBtn = document.getElementById(`btn-${id}`);
-            const active = `bg-[#15803D]`;
-            const active2 = `text-white`
-            clickedBtn.classList.add(active, active2);
+            clickedBtn.classList.add("bg-[#15803D]", "text-white", "rounded-sm");
             // console.log(clickedBtn);
             displayTrees(data.plants)
         })
@@ -38,6 +34,12 @@ const removeActive = () => {
     const button = document.querySelectorAll(`.tree-btn`);
     const allBtn = document.getElementById("all-btn");
     allBtn.classList.remove("bg-[#15803D]", "text-white");
+    button.forEach(btn => 
+        btn.classList.remove("bg-[#15803D]", "text-white")
+    );
+}
+const removeActive2 = () => {
+    const button = document.querySelectorAll(`.tree-btn`);
     button.forEach(btn => 
         btn.classList.remove("bg-[#15803D]", "text-white")
     );
@@ -94,15 +96,15 @@ const displayTrees = (trees) => {
     trees.forEach(tree => {
         const div2 = document.createElement("div");
         div2.innerHTML = `
-        <div class="bg-white p-5 space-y-3">
-            <img class="h-[220px] w-full" src="${tree.image}" alt="">
+        <div class="bg-white p-5 space-y-3 rounded-xl">
+            <img class="h-[220px] w-full rounded-lg" src="${tree.image}" alt="">
             <p class="font-bold">${tree.name}</p>
             <div class="h-[150px]"><p>${tree.description}</p></div>
             <div class="type-money flex justify-between">
                 <p class="bg-[#DCFCE7] text-[#15803D] px-3 rounded-[25px] font-semibold">${tree.category}</p>
                 <p class="font-bold"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${tree.price}</p>
             </div>
-            <button onclick='cartadd("${tree.name}", ${tree.price})' class="add btn w-full bg-[#15803D] text-[#FFFFFF]">Add to Cart</button>
+            <button onclick='cartadd("${tree.name}", ${tree.price})' class="add btn w-full bg-[#15803D] text-[#FFFFFF] rounded-3xl">Add to Cart</button>
         </div>
         `;
         div.appendChild(div2);
@@ -142,7 +144,7 @@ const cartadd = (name, price) => {
         span.innerText = parseInt(span.innerText) + 1;
     } else {
         cart.innerHTML += `
-        <div data-name="${name}" data-price="${price}" class="flex items-center justify-between bg-[#F0FDF4] p-2 mt-3">
+        <div data-name="${name}" data-price="${price}" class="flex items-center justify-between bg-[#F0FDF4] p-2 mt-3 rounded-lg">
             <div>
                 <p class="font-bold">${name}</p>
                 <p class="text-[#1F2937]">
