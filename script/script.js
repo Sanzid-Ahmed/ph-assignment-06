@@ -1,14 +1,29 @@
 const loadAllTrees = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
         .then(res => res.json())
-        .then(data => displayTrees(data.plants))
+        .then(data => {
+            removeActive();
+            const allBtn = document.getElementById("all-btn");
+            const active = `bg-[#15803D]`;
+            const active2 = `text-white`
+            allBtn.classList.add(active, active2);
+            displayTrees(data.plants)
+        })
 };
 
 const load = (id) => {
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayTrees(data.plants))
+        .then(data => {
+            removeActive();
+            const clickedBtn = document.getElementById(`btn-${id}`);
+            const active = `bg-[#15803D]`;
+            const active2 = `text-white`
+            clickedBtn.classList.add(active, active2);
+            // console.log(clickedBtn);
+            displayTrees(data.plants)
+        })
 };
 // URL Calling parts ==========================================================
 
@@ -19,7 +34,14 @@ const load = (id) => {
 
 
 
-
+const removeActive = () => {
+    const button = document.querySelectorAll(`.tree-btn`);
+    const allBtn = document.getElementById("all-btn");
+    allBtn.classList.remove("bg-[#15803D]", "text-white");
+    button.forEach(btn => 
+        btn.classList.remove("bg-[#15803D]", "text-white")
+    );
+}
 
 
 
@@ -149,7 +171,6 @@ const cartneg = (name, price) => {
     }
     updateTotal();
 };
-// cart addition and negation part
 
 
 
@@ -190,7 +211,8 @@ const displayCategories = (categories) => {
 
     for (let category of categories) {
         const li = document.createElement("li");
-        li.classList.add("p-2", "cursor-pointer");
+        li.classList.add("p-2", "cursor-pointer", "tree-btn");
+        li.id = `btn-${category.id}`
         li.innerText = category.category_name;
         li.addEventListener("click", () => load(category.id));
         ol.appendChild(li);
