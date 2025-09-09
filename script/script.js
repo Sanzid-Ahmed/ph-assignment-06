@@ -1,15 +1,21 @@
 const loadAllTrees = () => {
+    const spinner = document.getElementById("spinner");
+    spinner.classList.remove("hidden");
+    document.getElementById("trees-container").classList.add("hidden");
     fetch("https://openapi.programming-hero.com/api/plants")
         .then(res => res.json())
         .then(data => {
             removeActive2();
             const allBtn = document.getElementById("all-btn");
             allBtn.classList.add("bg-[#15803D]", "text-white", "rounded-sm");
-            displayTrees(data.plants)
-        })
+            displayTrees(data.plants);
+        });
 };
 
 const load = (id) => {
+    const spinner = document.getElementById("spinner");
+    spinner.classList.remove("hidden");
+    document.getElementById("trees-container").classList.add("hidden");
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
     fetch(url)
         .then(res => res.json())
@@ -18,8 +24,8 @@ const load = (id) => {
             const clickedBtn = document.getElementById(`btn-${id}`);
             clickedBtn.classList.add("bg-[#15803D]", "text-white", "rounded-sm");
             // console.log(clickedBtn);
-            displayTrees(data.plants)
-        })
+            displayTrees(data.plants);
+        });
 };
 // URL Calling parts ==========================================================
 
@@ -106,12 +112,19 @@ const detailsmodal = (tree) =>{
 
 
 const displayTrees = (trees) => {
+
+
+    const spinner = document.getElementById("spinner");
+
+
     const treesContainer = document.getElementById("trees-container");
     treesContainer.innerHTML = "";
 
+    spinner.classList.add("hidden");
+    document.getElementById("trees-container").classList.remove("hidden");
+
     const div = document.createElement("div");
     div.classList.add("grid", "grid-cols-3", "gap-3", "max-[1100px]:grid-cols-2", "max-[500px]:grid-cols-1");
-
     trees.forEach(tree => {
         const div2 = document.createElement("div");
         div2.innerHTML = `
@@ -128,7 +141,6 @@ const displayTrees = (trees) => {
         `;
         div.appendChild(div2);
     });
-
     treesContainer.appendChild(div);
 };
 
