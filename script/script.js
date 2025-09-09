@@ -76,9 +76,28 @@ const updateTotal = () => {
 
 
 
+const loadTreeDetails = async(id) => {
+    const url = `https:openapi.programming-hero.com/api/plant/${id}`;
+    const res = await fetch(url); 
+    const details = await res.json();
+    detailsmodal(details.plants);
+}
 
-
-
+const detailsmodal = (tree) =>{
+    const detailsbox = document.getElementById("details-container");
+    detailsbox.innerHTML = `
+        <div class="bg-white p-5 space-y-3 rounded-xl">
+            <p class="font-bold text-3xl">${tree.name}</p>
+            <img class="h-[220px] w-full rounded-lg" src="${tree.image}" alt="">
+            <div class="type-money">
+                <p class="font-bold">Category: <span class="font-normal">${tree.category}</span></p>
+                <p class="font-bold">Price: <i class="fa-solid fa-bangladeshi-taka-sign"></i><span class="font-normal">${tree.price}</span></p>
+            </div>
+            <div class="font-bold"><p>Description: <span class="font-normal">${tree.description}</span></p></div>      
+        </div>
+    `
+    document.getElementById("my_modal_5").showModal();
+}
 
 
 
@@ -98,8 +117,8 @@ const displayTrees = (trees) => {
         div2.innerHTML = `
         <div class="bg-white p-5 space-y-3 rounded-xl">
             <img class="h-[220px] w-full rounded-lg" src="${tree.image}" alt="">
-            <p class="font-bold">${tree.name}</p>
-            <div class="h-[150px]"><p>${tree.description}</p></div>
+            <p onclick="loadTreeDetails(${tree.id})" class="font-bold">${tree.name}</p>
+            <div class="h-[180px]"><p>${tree.description}</p></div>
             <div class="type-money flex justify-between">
                 <p class="bg-[#DCFCE7] text-[#15803D] px-3 rounded-[25px] font-semibold">${tree.category}</p>
                 <p class="font-bold"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${tree.price}</p>

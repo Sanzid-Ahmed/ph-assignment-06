@@ -42,7 +42,8 @@
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost text-xl text-white"><img class="w-[50px] max-[500px]:w-[25px]" src="assets/Daco_1645088.png" alt="">Green Earth</a>
+                    <a class="btn btn-ghost text-xl text-white"><img class="w-[50px] max-[500px]:w-[25px]"
+                            src="assets/Daco_1645088.png" alt="">Green Earth</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
@@ -82,7 +83,8 @@
     <main class="bg-[#F0FDF4] pt-20">
         <section>
             <h1 class="text-center font-bold text-3xl text-[#1F2937] mb-10">Choose Your Trees</h1>
-            <div class="catagoris-items-cart w-10/12 mx-auto grid grid-cols-7 gap-5 max-[500px]:flex max-[500px]:flex-col">
+            <div
+                class="catagoris-items-cart w-10/12 mx-auto grid grid-cols-7 gap-5 max-[500px]:flex max-[500px]:flex-col">
                 <div>
                     <h3 class="font-bold text-md mb-4 max-[500px]:text-center">Categories</h3>
                     <h3 id="all-btn" class="text-md mb-4 p-2 max-[500px]:text-center">All Trees</h3>
@@ -106,7 +108,8 @@
 
                     </div>
                 </div>
-                <div id="cart-container" class="min-h-[50vh] bg-white p-3 space-y-2 rounded-xl max-[500px]:mx-auto max-[500px]:w-full">
+                <div id="cart-container"
+                    class="min-h-[50vh] bg-white p-3 space-y-2 rounded-xl max-[500px]:mx-auto max-[500px]:w-full">
                     <h1 class="font-bold">Your Cart</h1>
                     <div id="cart">
                         <!-- <div class="flex items-center justify-between bg-[#F0FDF4] p-2">
@@ -172,7 +175,8 @@
 
         <div class="bg-[#166534] flex flex-col gap-10 p-20 justify-center max-[500px]:p-0 max-[500px]:py-10">
             <h1 class="text-center font-bold text-white text-xl">Plant a Tree Today</h1>
-            <div class="bg-[#15803D] p-10 flex flex-col justify-center items-center gap-3 w-[400px] mx-auto max-[500px]:w-[350px]">
+            <div
+                class="bg-[#15803D] p-10 flex flex-col justify-center items-center gap-3 w-[400px] mx-auto max-[500px]:w-[350px]">
                 <input type="text" placeholder="Your Name" class="input" />
                 <input type="text" placeholder="Your Email Address" class="input" />
                 <select class="select">
@@ -189,9 +193,37 @@
             <p class="text-white">© 2025 Green Earth. All Rights Reserved.</p>
         </div>
     </footer>
+
+
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="details-container"></div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
     <script src="script/script.js"></script>
     <!-- <script src="script/categories.js"></script> -->
     <!-- <script src="script/trees.js"></script> -->
 </body>
 
 </html>
+
+<!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<!-- <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <p class="py-4">Press ESC key or click the button below to close</p>
+        <div class="modal-action">
+            <form method="dialog">
+                if there is a button in form, it will close the modal
+                <button class="btn">Close</button>
+            </form>
+        </div>
+    </div>
+</dialog> -->
