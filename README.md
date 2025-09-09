@@ -16,13 +16,10 @@
 
 # Arrow functions: Shorter syntax for functions.
 
-# Destructuring assignment: Extracts values from arrays/objects into variables in a concise way.
+# 4
+Destructuring assignment: Extracts values from arrays/objects into variables in a concise way.
 
-# 5 
-co
-nst [a, b] = [1, 2];  
-const {x, y} = {x: 10, y: 20};
-
+# 5
 
 Template literals: Use backticks (`), support multi-line strings and interpolation ${expression}.
 
